@@ -68,7 +68,7 @@ class TitleAlerts extends PluginBase implements Listener {
     public function onEnable(){
     	$this->logger = $this->getServer()->getLogger();
     	if($this->getServer()->getPluginManager()->getPlugin("CustomAlerts")){
-    		if(CustomAlerts::getAPI()->getAPIVersion() == "2.0"){
+    		if(CustomAlerts::getAPI()->getAPIVersion() == "3.0.0-ALPHA10"){
     			@mkdir($this->getDataFolder());
     			$this->saveDefaultConfig();
     			$this->cfg = $this->getConfig()->getAll();
@@ -76,7 +76,7 @@ class TitleAlerts extends PluginBase implements Listener {
     			$this->logger->info($this->translateColors("&", self::PREFIX . "&eTitleAlerts &9v" . $this->getDescription()->getVersion() . "&e developed by &9EvolSoft"));
     			$this->logger->info($this->translateColors("&", self::PREFIX . "&eWebsite &9" . $this->getDescription()->getWebsite()));
     		}else{
-    			$this->logger->error($this->translateColors("&", self::PREFIX . "&cPlease update CustomAlerts to API 2.0. Plugin disabled"));
+    			$this->logger->error($this->translateColors("&", self::PREFIX . "&cPlease update CustomAlerts to API 3.0.0-ALPHA10. Plugin disabled"));
     			$this->getServer()->getPluginManager()->disablePlugin($this);
     		}
     	}else{
